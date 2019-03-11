@@ -24,8 +24,8 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        Scanner sc = new Scanner(System.in);
-        int in = sc.nextInt();
+//        Scanner sc = new Scanner(System.in);
+//        int in = sc.nextInt();
         //PrintTowerUP(in);       // 金字塔上
         //PrintTowerDown(in);     // 金字塔下
         //
@@ -33,7 +33,11 @@ public class Main {
         //PrintTriangleLeft_Down(in); //三角形左下
         //PrintTriangleRigh_Up(in);   //三角形右上
         //PrintTriangleRight_Down(in);//三角形右下
-        PrintTriangle_Coordinate_Method(in);
+        //PrintTriangle_Coordinate_Method(in);
+        //PrintTriangle_Coordinate_Method_Empty_Triangle_Up(in);
+        //PrintTriangle_Coordinate_Method_Empty_Triangle_Down(in);
+        //PrintMuti_Table();
+        PrintMuti_Table_Triangle();
     }
 
 //    架構->方法->實作
@@ -109,17 +113,18 @@ public class Main {
 
     public static void PrintTriangleRight_Down(int number){     //OK
         int  in = number;
-        for (int i = 1 ;i <= in; i++){
-            for (int j = 1 ; j <= i ; j++){
+        for (int i = 1 ; i <= in ; i++) {
+            for (int j = 1; j <= i; j++) {
                 System.out.print(" ");
             }
-            for (int k = in ; k >= i ; k--){
+            for (int k = in; k >= i; k--) {
                 System.out.print("*");
             }
             System.out.println();
         }
-
     }
+
+
 
     public static void PrintTriangle_Coordinate_Method(int number){  //Coordinate
 
@@ -142,7 +147,35 @@ public class Main {
 
     }
 
+    public static void PrintTriangle_Coordinate_Method_Empty_Triangle_Up(int number){
+    int in = number;
 
+        for (int i = 1; i <= in ; i++){
+            for (int j = 1 ; j <= in ; j++){
+                if(i == j || j == 1 || i == 5){
+                    System.out.print("*");
+                }else{
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+
+    }
+    public static void PrintTriangle_Coordinate_Method_Empty_Triangle_Down(int number){
+        int in =  number;
+        for (int i = 1; i <= in ; i++){
+            for (int j = 1 ; j <= in ; j++){
+                if(i == j || j == 5 || i == 1){
+                    System.out.print("*");
+                }else{
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+
+    }
 
 
 
